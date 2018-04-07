@@ -1,0 +1,22 @@
+[
+   {
+      "skuId":"A",
+      "unitPrice":50,
+      "multibuyCount":3,
+      "multibuyPrice":130
+   },
+   {
+      "skuId":"B",
+      "unitPrice":30,
+      "multibuyCount":2,
+      "multibuyPrice":45
+   },
+   {
+      "skuId":"C",
+      "unitPrice":30
+   },
+   {
+      "skuId":"D",
+      "unitPrice":30
+   }
+]
