@@ -9,9 +9,7 @@ import java.util.Collection;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * Created by harshitha.suresh on 07/04/2018.
- */
+
 public class JsonFileBasedPricingRulesReaderTest {
 
     @Test

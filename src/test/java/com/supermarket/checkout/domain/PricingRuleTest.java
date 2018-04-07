@@ -10,9 +10,7 @@ import java.util.Collection;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * Created by harshitha.suresh on 07/04/2018.
- */
+
 @RunWith(Parameterized.class)
 public class PricingRuleTest {
     private PricingRule pricingRule;
@@ -37,12 +35,12 @@ public class PricingRuleTest {
         });
     }
 
-    public static PricingRule createRule(String skuId, long unitPrice, Long multibuyCount, Long multibuyPrice) {
-        return new PricingRule(skuId, new BigDecimal(unitPrice), multibuyCount, new BigDecimal(multibuyPrice));
-    }
-
     @Test
     public void testCalculatePrice() {
         assertEquals(expectedPrice, pricingRule.calculatePriceFor(quantity));
+    }
+
+    public static PricingRule createRule(String skuId, long unitPrice, Long multibuyCount, Long multibuyPrice) {
+        return new PricingRule(skuId, new BigDecimal(unitPrice), multibuyCount, new BigDecimal(multibuyPrice));
     }
 }

@@ -17,7 +17,7 @@ public class ShoppingCart {
 
         String itemSkuIds = args[0];
         String pricingRulesFile = args[1];
-        
+
         PricingRulesReader pricingRuleReader = new JsonFileBasedPricingRulesReader(pricingRulesFile);
         ItemPriceCalculator itemPriceCalculator = new ItemPriceCalculator(pricingRuleReader);
         BigDecimal price = itemPriceCalculator.calculate(itemSkuIds.chars().mapToObj(i -> "" + (char) i).collect(Collectors.toList()));
