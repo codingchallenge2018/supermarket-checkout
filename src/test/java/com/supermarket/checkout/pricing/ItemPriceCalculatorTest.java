@@ -32,6 +32,8 @@ public class ItemPriceCalculatorTest {
     @Parameterized.Parameters(name = "{index}: price({0})={1}")
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
+                //Empty list
+                {Collections.EMPTY_LIST, BigDecimal.ZERO},
                 //Single item purchased. Not eligible for discount
                 {Collections.singletonList("A"), new BigDecimal(50)},
                 //Multiple items purchased but not eligible for discount
