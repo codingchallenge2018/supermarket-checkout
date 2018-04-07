@@ -28,9 +28,13 @@ public class PricingRuleTest {
     @Parameterized.Parameters(name = "{index}: price({1})={2}")
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
+                //Eligible for multibuy discount
                 {createRule("A", 50, 3L, 130L), 4L, new BigDecimal(180)},
+                //Quantity is 1. Not eligible for multibuy discount
                 {createRule("A", 50, 3L, 130L), 1L, new BigDecimal(50)},
+                //Number of items is 0
                 {createRule("A", 50, 3L, 130L), 0L, BigDecimal.ZERO},
+                //No multibuy price for the pricing rule
                 {new PricingRule("A", new BigDecimal(50), null, null), 4L, new BigDecimal(200)},
         });
     }

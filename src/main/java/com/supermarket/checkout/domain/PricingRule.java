@@ -18,6 +18,12 @@ public class PricingRule {
         this.multibuyPrice = multibuyPrice;
     }
 
+    /***
+     * Calculates price of the item based on the pricing rule and quantity.
+     * Total Price = (Multibuy Price * Multibuy Multiplier) + (Unit price * No of Items eligible for unit price)
+     * @param quantity
+     * @return Total price
+     */
     public BigDecimal calculatePriceFor(Long quantity) {
         if (multibuyCount != null) {
             Long multibuyMultiplier = quantity / multibuyCount;

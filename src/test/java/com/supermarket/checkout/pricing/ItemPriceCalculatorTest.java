@@ -32,9 +32,13 @@ public class ItemPriceCalculatorTest {
     @Parameterized.Parameters(name = "{index}: price({0})={1}")
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
+                //Single item purchased. Not eligible for discount
                 {Collections.singletonList("A"), new BigDecimal(50)},
+                //Multiple items purchased but not eligible for discount
                 {Arrays.asList("A", "B"), new BigDecimal(80)},
+                //Multiple items purchased with both items eligible for multibuy discount
                 {Arrays.asList("A", "B", "A", "A", "B"), new BigDecimal(175)},
+                //Multiple items purchased with one of the items eligible for multibuy discount
                 {Arrays.asList("A", "B", "B", "C", "D"), new BigDecimal(155)}
         });
     }
